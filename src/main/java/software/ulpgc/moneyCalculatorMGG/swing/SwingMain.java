@@ -35,15 +35,16 @@ public class SwingMain extends JFrame {
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setLayout(new BorderLayout());
 
-        JPanel contentPane = new JPanel();
-        contentPane.setLayout(new GridLayout(2, 2, 10, 10));
-        contentPane.setBackground(new Color(240, 240, 240));
+        JPanel mainPanel = new JPanel();
+        mainPanel.setLayout(new BorderLayout(10, 10));
+        mainPanel.setBackground(new Color(240, 240, 240));
 
-        contentPane.add(createMoneyDialog());
-        contentPane.add(createCurrencyDialog());
-        contentPane.add(createMoneyDisplay());
+        mainPanel.add(createMoneyDialog(), BorderLayout.NORTH);
+        mainPanel.add(createCurrencyDialog(), BorderLayout.WEST);
+        mainPanel.add(createMoneyDisplay(), BorderLayout.CENTER);
+        mainPanel.add(createResizedImageLabel(), BorderLayout.SOUTH);
 
-        this.add(contentPane, BorderLayout.CENTER);
+        this.add(mainPanel, BorderLayout.CENTER);
         this.add(toolbar(), BorderLayout.SOUTH);
     }
 
@@ -81,6 +82,19 @@ public class SwingMain extends JFrame {
         dialog.setBorder(BorderFactory.createTitledBorder("Introduzca una cantidad:"));
         dialog.setBackground(new Color(189, 195, 199));
         return dialog;
+    }
+
+    private Component createResizedImageLabel() {
+        ImageIcon originalIcon = new ImageIcon(getClass().getResource("/images/coin-banner-MGG.png"));
+        Image originalImage = originalIcon.getImage();
+
+        int width = 700;
+        int height = 175;
+        Image resizedImage = originalImage.getScaledInstance(width, height, Image.SCALE_SMOOTH);
+
+        ImageIcon resizedIcon = new ImageIcon(resizedImage);
+
+        return new JLabel(resizedIcon);
     }
 
     private void add(String name, Command command) {
