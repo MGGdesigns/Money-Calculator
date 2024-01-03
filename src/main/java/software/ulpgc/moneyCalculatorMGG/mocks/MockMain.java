@@ -1,6 +1,12 @@
 package software.ulpgc.moneyCalculatorMGG.mocks;
 
-import software.ulpgc.moneyCalculatorMGG.*;
+import software.ulpgc.moneyCalculatorMGG.control.Command;
+import software.ulpgc.moneyCalculatorMGG.control.ExchangeMoneyCommand;
+import software.ulpgc.moneyCalculatorMGG.interfaces.CurrencyDialog;
+import software.ulpgc.moneyCalculatorMGG.interfaces.ExchangeRateLoader;
+import software.ulpgc.moneyCalculatorMGG.interfaces.MoneyDialog;
+import software.ulpgc.moneyCalculatorMGG.interfaces.MoneyDisplay;
+import software.ulpgc.moneyCalculatorMGG.model.Currency;
 
 import java.util.List;
 

@@ -3,8 +3,8 @@ package software.ulpgc.moneyCalculatorMGG.fixerws;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import software.ulpgc.moneyCalculatorMGG.Currency;
-import software.ulpgc.moneyCalculatorMGG.CurrencyLoader;
+import software.ulpgc.moneyCalculatorMGG.model.Currency;
+import software.ulpgc.moneyCalculatorMGG.interfaces.CurrencyLoader;
 
 import java.io.IOException;
 import java.io.InputStream;
